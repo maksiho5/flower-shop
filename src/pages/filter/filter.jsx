@@ -1,46 +1,43 @@
-import "../Home/home.css";
-import "./filter.css";
-import { useRef, useState } from "react";
-import { bouquets, COLORS, FLOWERS, REASONS } from "../../utils";
-import CardBouquet from "../../components/CardBouquet/CardBouquet";
-import ButtonSlider from "../../components/ButtonSlider/ButtonSlider";
+import '../Home/home.css';
+import './filter.css';
+import { useRef, useState } from 'react';
+import { bouquets, COLORS, FLOWERS, REASONS } from '../../utils';
+import CardBouquet from '../../components/CardBouquet/CardBouquet';
+import ButtonSlider from '../../components/ButtonSlider/ButtonSlider';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import BlockFilter from "../../components/BlockFilter/BlockFilter";
-import FlowerFilter from "../../components/popups/FlowerFilter/FlowerFilter";
-import FilterPrice from "../../components/popups/FilterPrice/FilterPrice";
-import Products from "../../components/Products/Products";
-import FiltersFlowers from "../../components/popups/FiltersFlowers/CategoryMenu";
-
-
+import BlockFilter from '../../components/BlockFilter/BlockFilter';
+import FlowerFilter from '../../components/popups/FlowerFilter/FlowerFilter';
+import FilterPrice from '../../components/popups/FilterPrice/FilterPrice';
+import Products from '../../components/Products/Products';
+import FiltersFlowers from '../../components/popups/FiltersFlowers/CategoryMenu';
 
 function Filter() {
   const swiperRef = useRef(null);
-    const [activeFilter, setActiveFilter] = useState(null);
-    const bouquetItems = [
-    { img: bouquets.bouquets1, text: "букет 1" },
-    { img: bouquets.bouquets2, text: "букет 2" },
-    { img: bouquets.bouquets3, text: "букет 3" },
-    { img: bouquets.bouquets4, text: "букет 4" },
-    { img: bouquets.bouquets5, text: "букет 5" },
-    { img: bouquets.bouquets6, text: "букет 6" },
-    { img: bouquets.bouquets7, text: "букет 7" },
-    { img: bouquets.bouquets8, text: "букет 8" },
-    { img: bouquets.bouquets9, text: "букет 9" },
-    { img: bouquets.bouquets10, text: "букет 10" },
-    { img: bouquets.bouquets1, text: "букет 11" },
-    { img: bouquets.bouquets2, text: "букет 12" }
+  const [activeFilter, setActiveFilter] = useState(null);
+  const bouquetItems = [
+    { img: bouquets.bouquets1, text: 'букет 1' },
+    { img: bouquets.bouquets2, text: 'букет 2' },
+    { img: bouquets.bouquets3, text: 'букет 3' },
+    { img: bouquets.bouquets4, text: 'букет 4' },
+    { img: bouquets.bouquets5, text: 'букет 5' },
+    { img: bouquets.bouquets6, text: 'букет 6' },
+    { img: bouquets.bouquets7, text: 'букет 7' },
+    { img: bouquets.bouquets8, text: 'букет 8' },
+    { img: bouquets.bouquets9, text: 'букет 9' },
+    { img: bouquets.bouquets10, text: 'букет 10' },
+    { img: bouquets.bouquets1, text: 'букет 11' },
+    { img: bouquets.bouquets2, text: 'букет 12' },
   ];
 
-    const filters = [
-    { id: "price", text: "Цена" },
-    { id: "reason", text: "Повод" },
-    { id: "composition", text: "Цветы в составе" },
-    { id: "color", text: "Цвет" },
-    { id: "fresh", text: "Собран сегодня" },
+  const filters = [
+    { id: 'price', text: 'Цена' },
+    { id: 'reason', text: 'Повод' },
+    { id: 'composition', text: 'Цветы в составе' },
+    { id: 'color', text: 'Цвет' },
+    { id: 'fresh', text: 'Собран сегодня' },
   ];
-
 
   const handlePrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -54,18 +51,18 @@ function Filter() {
     }
   };
 
-    const handleFilterClick = (filterId) => {
+  const handleFilterClick = (filterId) => {
     setActiveFilter((prev) => (prev === filterId ? null : filterId));
   };
-   const renderFilterContent = (id) => {
+  const renderFilterContent = (id) => {
     switch (id) {
-      case "price":
+      case 'price':
         return <FilterPrice />;
-      case "composition":
+      case 'composition':
         return <FlowerFilter items={FLOWERS} />;
-      case "color":
+      case 'color':
         return <FlowerFilter items={COLORS} />;
-      case "reason":
+      case 'reason':
         return <FlowerFilter items={REASONS} />;
       default:
         return null;
@@ -83,8 +80,7 @@ function Filter() {
           </div>
           <div className="filter-page__filter_contaner">
             <div className="filter-page__filter_contaner-slider">
-        
-              <ButtonSlider  direction="prev" onClick={handlePrev} />
+              <ButtonSlider direction="prev" onClick={handlePrev} />
               <div className="swiper-container" style={{ maxWidth: '1300px', width: '100%' }}>
                 <Swiper
                   ref={swiperRef}
@@ -96,10 +92,9 @@ function Filter() {
                   autoplay={{
                     delay: 5000,
                     disableOnInteraction: false,
-                    pauseOnMouseEnter: true
+                    pauseOnMouseEnter: true,
                   }}
-                
-                 
+
                   className="my-swiper"
                 >
                   {bouquetItems.map((item, index) => (
@@ -113,37 +108,34 @@ function Filter() {
               </div>
               <ButtonSlider direction="next" onClick={handleNext} />
             </div>
- <div className="filter-page__filter_contaner-filter">
-      {filters.map((filter) => (
-        <div
-          key={filter.id}
-          className={`filter-button ${
-            activeFilter === filter.id ? "active" : ""
-          }`}
-        >
-          <BlockFilter
-            text={filter.text}
-            active={activeFilter === filter.id}
-            onClick={() => handleFilterClick(filter.id)}
-          />
+            <div className="filter-page__filter_contaner-filter">
+              {filters.map((filter) => (
+                <div
+                  key={filter.id}
+                  className={`filter-button ${activeFilter === filter.id ? 'active' : ''}`}
+                >
+                  <BlockFilter
+                    text={filter.text}
+                    active={activeFilter === filter.id}
+                    onClick={() => handleFilterClick(filter.id)}
+                  />
 
-          {activeFilter === filter.id && (
-            <div className="filter-dropdown dropdown-active">
-              {renderFilterContent(filter.id)}
+                  {activeFilter === filter.id && (
+                    <div className="filter-dropdown dropdown-active">
+                      {renderFilterContent(filter.id)}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-          )}
-        </div>
-      ))}
-    </div>
-
           </div>
         </div>
-              <div className="home__products">
-       <Products title={false}/>
-      </div>
+        <div className="home__products">
+          <Products title={false} />
+        </div>
       </div>
     </>
   );
 }
 
-export default Filter
+export default Filter;

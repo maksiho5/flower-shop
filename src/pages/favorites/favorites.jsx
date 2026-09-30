@@ -1,7 +1,7 @@
-import "../Home/home.css";
-import "./favorites.css";
-import { icons } from "../../utils";
-import CardProduct from "../../components/CardProduct/CardProduct";
+import '../Home/home.css';
+import './favorites.css';
+import { icons } from '../../utils';
+import CardProduct from '../../components/CardProduct/CardProduct';
 
 function Favorites() {
   return (

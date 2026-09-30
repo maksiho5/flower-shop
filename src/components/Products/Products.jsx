@@ -1,20 +1,18 @@
-import CardProduct from "../CardProduct/CardProduct";
-import s from "./products.module.css";
+import CardProduct from '../CardProduct/CardProduct';
+import s from './products.module.css';
 
-const Products = ({title=true}) => {
-    const list = Array(12).fill(1)
+const Products = ({ title = true }) => {
+  const list = Array(12).fill(1);
   return (
     <div className={s.products}>
-      <div className={`container ${title ? "": "disable"}`}>
+      <div className={`container ${title ? '' : 'disable'}`}>
         <h2 className={s.products__title}>Классичечкие букеты</h2>
         <h3 className={s.products__subtitle}>Авторские букеты</h3>
       </div>
       <div className={s.products__list}>
-        {
-            list.map((_, index)=>(
-                <CardProduct key={index}/>
-            ))
-        }
+        {list.map((_, index) => (
+          <CardProduct key={index} />
+        ))}
       </div>
     </div>
   );

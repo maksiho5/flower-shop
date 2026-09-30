@@ -1,6 +1,6 @@
-import Categories from "../../components/Categories/Categories";
-import Products from "../../components/Products/Products";
-import "./home.css";
+import Categories from '../../components/Categories/Categories';
+import Products from '../../components/Products/Products';
+import './home.css';
 
 function Home() {
   return (
@@ -9,19 +9,17 @@ function Home() {
         <div className="home__box">
           <h1 className="home__box-title">
             В каждом лепестке - <br />
-            история {""}
+            история {''}
             <span className="home__box-title-mod">любви</span>
           </h1>
-          <p className="home__box-subtitle">
-            Создаем букеты, которые говорят без слов
-          </p>
+          <p className="home__box-subtitle">Создаем букеты, которые говорят без слов</p>
         </div>
-        <Categories/>
+        <Categories />
       </div>
       <div className="home__products">
         <Products />
-        <Products/>
-        <Products/>
+        <Products />
+        <Products />
       </div>
     </section>
   );

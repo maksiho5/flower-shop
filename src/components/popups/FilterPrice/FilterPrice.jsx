@@ -1,8 +1,8 @@
-import { useState } from "react";
-import RangeInput from "../../RangeInput/RangeInput";
-import ButtonShow from "../../ButtonShow/ButtonShow";
+import { useState } from 'react';
+import RangeInput from '../../RangeInput/RangeInput';
+import ButtonShow from '../../ButtonShow/ButtonShow';
 
-import s from "./style.module.css";
+import s from './style.module.css';
 
 const MIN = 0;
 const MAX = 100000;
@@ -16,20 +16,14 @@ const FilterPrice = () => {
 
   return (
     <div className={s.FilterPrice}>
-
       <div className={s.FilterPrice__inputs}>
-        <RangeInput
-          placeholder="От 0"
-          value={from}
-          onChange={(e) => setFrom(+e.target.value)}
-        />
+        <RangeInput placeholder="От 0" value={from} onChange={(e) => setFrom(+e.target.value)} />
         <RangeInput
           placeholder="До 100 000 ₽"
           value={to}
           onChange={(e) => setTo(+e.target.value)}
         />
       </div>
-
 
       <div className={s.FilterPrice__slider}>
         <div className={s.FilterPrice__track} />
@@ -61,8 +55,7 @@ const FilterPrice = () => {
         />
       </div>
 
-
-      <ButtonShow  text={"Применить"} />
+      <ButtonShow text={'Применить'} />
     </div>
   );
 };

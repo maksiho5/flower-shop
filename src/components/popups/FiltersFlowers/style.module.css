@@ -8,17 +8,14 @@
   box-shadow: 0 3px 35px 0 rgba(0, 0, 0, 0.25);
   /* visibility: hidden; */
   position: absolute;
-    top: 147px;
+  top: 147px;
   left: -650px;
   transition: left 3s ease;
   z-index: 1000;
-
-
 }
 
 .Menu.active {
-
-  left: 0; 
+  left: 0;
 }
 
 .Menu__left {
@@ -30,8 +27,6 @@
   border-right: 1px solid var(--vtorichnyy-svetlo-seryy);
   height: 100%;
 }
-
-
 
 .Menu__right {
   flex: 1;
@@ -98,4 +93,5 @@
   overflow-y: auto;
 }
 
-.block_SelectionFilter {}
+.block_SelectionFilter {
+}

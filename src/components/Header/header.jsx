@@ -1,18 +1,18 @@
-import { useState } from "react";
-import catalog_icon from "../../assets/header/catalog.svg";
-import search_icon from "../../assets/header/search.svg";
-import location_icon from "../../assets/icons/location.svg";
-import time_icon from "../../assets/header/time.svg";
-import user_icon from "../../assets/header/user.svg";
-import basket_icon from "../../assets/icons/basket.svg";
-import "../Header/style.css";
-import CategoryMenu from "../popups/FiltersFlowers/CategoryMenu";
+import { useState } from 'react';
+import catalog_icon from '../../assets/header/catalog.svg';
+import search_icon from '../../assets/header/search.svg';
+import location_icon from '../../assets/icons/location.svg';
+import time_icon from '../../assets/header/time.svg';
+import user_icon from '../../assets/header/user.svg';
+import basket_icon from '../../assets/icons/basket.svg';
+import '../Header/style.css';
+import CategoryMenu from '../popups/FiltersFlowers/CategoryMenu';
 
 function Header() {
-    const [activeFilter, setActiveFilter] = useState(false);
-    const openFilterMenu = () => {
- setActiveFilter((prev) => (prev === true ? false :  true));
-    }
+  const [activeFilter, setActiveFilter] = useState(false);
+  const openFilterMenu = () => {
+    setActiveFilter((prev) => (prev === true ? false : true));
+  };
   return (
     <header className="header">
       <div className="container">
@@ -24,26 +24,16 @@ function Header() {
             <button className="header__nav-btn" onClick={openFilterMenu}>
               <img src={catalog_icon} alt="каталог" />
             </button>
-            {activeFilter? <CategoryMenu activeFilter={activeFilter} /> : ""}
+            {activeFilter ? <CategoryMenu activeFilter={activeFilter} /> : ''}
             <div className="header__nav-item">
-              <img
-                className="header__nav-item-icon"
-                src={search_icon}
-                alt="поиск"
-              />
-              <input
-                className="header__nav-search"
-                type="text"
-                placeholder="Поиск"
-              />
+              <img className="header__nav-item-icon" src={search_icon} alt="поиск" />
+              <input className="header__nav-search" type="text" placeholder="Поиск" />
             </div>
             <div className="header__nav-choose">
               <img src={location_icon} alt="местоположение" />
               <div className="header__nav-choose-texts">
                 <p className="header__nav-choose-texts-title">Адрес доставки</p>
-                <p className="header__nav-choose-texts-subtitle">
-                  Москва, узнаем у получателя
-                </p>
+                <p className="header__nav-choose-texts-subtitle">Москва, узнаем у получателя</p>
               </div>
             </div>
             <div className="header__nav-choose">

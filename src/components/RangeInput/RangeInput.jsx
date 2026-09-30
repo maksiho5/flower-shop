@@ -1,7 +1,6 @@
-import s from "./style.module.css";
+import s from './style.module.css';
 
-const RangeInput = ({ placeholder,value,
-onChange, }) => {
+const RangeInput = ({ placeholder, value, onChange }) => {
   return (
     <input
       type="text"

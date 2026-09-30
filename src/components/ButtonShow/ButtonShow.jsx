@@ -1,9 +1,7 @@
-import s from "./style.module.css";
+import s from './style.module.css';
 
-const ButtonShow = ({text="Показать"}) => {
-  return (
-<div className={s.ButtonShow}>{text}</div>
-  );
+const ButtonShow = ({ text = 'Показать' }) => {
+  return <div className={s.ButtonShow}>{text}</div>;
 };
 
 export default ButtonShow;

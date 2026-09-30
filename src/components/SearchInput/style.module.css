@@ -8,7 +8,7 @@
   padding: 15px;
 
   border-radius: 15px;
-background: var(--vtorichnyy-svetlo-seryy);
+  background: var(--vtorichnyy-svetlo-seryy);
 }
 
 .SearchInput__icon {
